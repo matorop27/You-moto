@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Какой ты мотоциклист? — тест</title>
+  <meta name="description" content="10 вопросов — и ты узнаешь свой мотоциклетный архетип." />
 
+  <meta property="og:title" content="Какой ты мотоциклист?" />
+  <meta property="og:description" content="Пройди тест из 10 вопросов и узнай свой архетип." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="logo" href="./">MOTO<span>TYPE</span></a>
+    <a class="topbar__link" href="#about">О тесте</a>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- ЭКРАН 1: ИНТРО -->
+  <section class="screen screen--active" data-screen="intro">
+    <div class="container intro">
+      <p class="eyebrow">Тест · 10 вопросов · ~2 минуты</p>
+      <h1>Какой ты<br /><span class="accent">мотоциклист?</span></h1>
+      <p class="lead">
+        Шоссейный волк, стрит-хулиган или гаражный философ?
+        Ответь на 10 вопросов — узнай свой архетип и мотоцикл, который тебе подходит.
+      </p>
+      <button class="btn btn--primary btn--lg" data-action="start">Узнать, какой я мотоциклист</button>
+      <p class="hint">Бесплатно · Без регистрации · Результат сразу</p>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 2: ВОПРОСЫ -->
+  <section class="screen" data-screen="quiz">
+    <div class="container quiz">
+      <div class="progress">
+        <div class="progress__bar" id="progressBar"></div>
+      </div>
+      <p class="progress__label"><span id="qCurrent">1</span> / <span id="qTotal">10</span></p>
+
+      <h2 class="question" id="questionText">…</h2>
+      <div class="answers" id="answers"></div>
+
+      <button class="btn btn--ghost" id="backBtn" data-action="back" hidden>← Назад</button>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 3: РЕЗУЛЬТАТ -->
+  <section class="screen" data-screen="result">
+    <div class="container result">
+      <p class="eyebrow">Твой архетип</p>
+      <h1 class="result__title" id="resultTitle">…</h1>
+      <p class="result__tagline" id="resultTagline">…</p>
+
+      <div class="result__card">
+        <p id="resultDescription">…</p>
+      </div>
+
+      <h3 class="section-title">Твой мотоцикл</h3>
+      <p id="resultBike">…</p>
+
+      <h3 class="section-title">Сильные стороны</h3>
+      <ul id="resultStrengths" class="list"></ul>
+
+      <!-- БЛОК ОПЛАТЫ (пока заглушка) -->
+      <div class="paywall">
+        <div class="paywall__head">
+          <h3>Полный разбор</h3>
+          <span class="badge">Скоро</span>
+        </div>
+        <ul class="list list--muted">
+          <li>Подробный психологический портрет</li>
+          <li>3 мотоцикла под твой стиль с бюджетом</li>
+          <li>Чек-лист экипировки</li>
+          <li>Персональный PDF</li>
+        </ul>
+
+        <label class="check">
+          <input type="checkbox" id="agreePay" />
+          <span>Я оплачиваю 10 ₽ и принимаю условия <a href="#" data-action="openTerms">оферты</a>.</span>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" id="agreeWeekly" />
+          <span>
+            Я понимаю, что подписка продлевается автоматически —
+            <strong>500 ₽ раз в 7 дней</strong> — и её можно отключить
+            в личном кабинете в любой момент.
+          </span>
+        </label>
+
+        <button class="btn btn--primary btn--lg" id="payBtn" disabled>
+          Оплатить 10 ₽
+        </button>
+        <p class="hint">Платежи подключаются на следующем этапе.</p>
+      </div>
+
+      <div class="result__actions">
+        <button class="btn btn--primary" data-action="share">Поделиться результатом</button>
+        <button class="btn btn--ghost" data-action="restart">Пройти заново</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 4: ОФЕРТА -->
+  <section class="screen" data-screen="terms">
+    <div class="container terms">
+      <h1>Условия оплаты</h1>
+      <p><strong>Стоимость теста:</strong> 10 ₽ единоразово.</p>
+      <p><strong>Подписка:</strong> 500 ₽ каждые 7 дней, продлевается автоматически.</p>
+      <p><strong>Отключение:</strong> в личном кабинете в любой момент или письмом на support@…</p>
+      <p><strong>Возврат:</strong> до получения полного результата — по запросу.</p>
+      <p class="hint">Текст-заглушка. Заменим на нормальную оферту до подключения платежей.</p>
+      <button class="btn btn--ghost" data-action="closeTerms">← Назад</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© <span id="year"></span> MOTOTYPE</span>
+    <a href="#" data-action="openTerms">Оферта</a>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -4,6 +4,7 @@ const ARCHETYPES = {
     id: "racer",
     title: "Шоссейный гонщик",
     tagline: "Скорость — это твоя религия",
+    image: "img/a-racer.jpg",
     description:
       "Ты живёшь ради прямых участков, обгонов и рёва мотора на 12 000 оборотов. Тебе важен контроль и адреналин. Ты не любишь стоять в пробках — ты их объезжаешь.",
     bike: "Спортбайк или спорт-турист: Yamaha R7, Kawasaki Ninja 650, Ducati Supersport.",
@@ -13,6 +14,7 @@ const ARCHETYPES = {
     id: "philosopher",
     title: "Гаражный философ",
     tagline: "Мотоцикл — это процесс, а не результат",
+    image: "img/a-philosopher.jpg",
     description:
       "Ты любишь разбирать, чинить, улучшать. Поездка для тебя — повод проверить то, что ты собрал своими руками. В гараже ты медитируешь.",
     bike: "Классика или кастом под сборку: Royal Enfield, Yamaha XS, любой проект под восстановление.",
@@ -22,6 +24,7 @@ const ARCHETYPES = {
     id: "hooligan",
     title: "Стрит-хулиган",
     tagline: "Город — твоя площадка",
+    image: "img/a-hooligan.jpg",
     description:
       "Ты ездишь там, где нельзя, паркуешься там, где не паркуются, и знаешь все дворы в радиусе 10 км. Тебе важен стиль и звук.",
     bike: "Нейкед или супермото: Yamaha MT-07, KTM 690 Duke, Husqvarna 701.",
@@ -31,6 +34,7 @@ const ARCHETYPES = {
     id: "traveler",
     title: "Дальний турист",
     tagline: "Дорога длиннее, чем выходные",
+    image: "img/a-traveler.jpg",
     description:
       "Ты считаешь километры не за день, а за поездку. Кофры, палатка, рассвет где-то под Владимиром — твоя норма.",
     bike: "Турист или адвенчер: BMW GS, Honda Africa Twin, Yamaha Ténéré.",
@@ -40,6 +44,7 @@ const ARCHETYPES = {
     id: "enduro",
     title: "Хард-эндурист",
     tagline: "Асфальт — это только до леса",
+    image: "img/a-enduro.jpg",
     description:
       "Ты едешь туда, где нет дорог, и находишь там себя. Грязь, броды, подъёмы — это не препятствия, а часть маршрута.",
     bike: "Эндуро или хард-эндуро: KTM EXC, Husqvarna TE, Honda CRF.",
@@ -49,6 +54,7 @@ const ARCHETYPES = {
     id: "esthete",
     title: "Кастом-эстет",
     tagline: "Красота важнее скорости",
+    image: "img/a-esthete.jpg",
     description:
       "Для тебя мотоцикл — это объект искусства. Хром, кожа, правильные пропорции. Ты ездишь медленно и выглядишь дорого.",
     bike: "Чоппер или кастом: Harley-Davidson, Indian, бобберы на заказ.",
@@ -58,6 +64,7 @@ const ARCHETYPES = {
     id: "city",
     title: "Городской райдер",
     tagline: "Мотоцикл — это инструмент",
+    image: "img/a-city.jpg",
     description:
       "Ты ездишь каждый день, в любую погоду, по делам. Мотоцикл для тебя — не хобби, а способ жить быстрее города.",
     bike: "Нейкед или макси-скутер: Honda CB500, Yamaha XMAX, BMW C400.",
@@ -67,6 +74,7 @@ const ARCHETYPES = {
     id: "oldschool",
     title: "Олдскул-байкер",
     tagline: "Настоящее — это то, что сделано до 2000-го",
+    image: "img/a-oldschool.jpg",
     description:
       "Ты уважаешь традиции, кожаные куртки, клубы и долгие разговоры у костра. Новомодное тебе неинтересно.",
     bike: "Классика: Harley Sportster, Triumph Bonneville, Ural.",
@@ -78,6 +86,7 @@ const ARCHETYPES = {
 const QUESTIONS = [
   {
     text: "За тобой пристроилась машина ДПС. Твои действия?",
+    image: "img/q1.jpg.jpg",
     answers: [
       { text: "Спокойно еду по правилам, мне скрывать нечего", scores: { oldschool: 3, traveler: 1 } },
       { text: "Прибавляю газу — они всё равно не догонят", scores: { racer: 3, hooligan: 1 } },
@@ -87,6 +96,7 @@ const QUESTIONS = [
   },
   {
     text: "Упал в кювет на скорости. Первое, что делаешь?",
+    image: "img/q2.jpg.jpg",
     answers: [
       { text: "Проверяю, цел ли я, потом уже мотоцикл", scores: { traveler: 3, racer: 1 } },
       { text: "Матерюсь, встаю, поднимаю байк и еду дальше", scores: { enduro: 3, hooligan: 1 } },
@@ -96,6 +106,7 @@ const QUESTIONS = [
   },
   {
     text: "Твой мотоцикл — это прежде всего…",
+    image: "img/q3.jpg.jpg",
     answers: [
       { text: "Скорость и адреналин", scores: { racer: 3 } },
       { text: "Инструмент, чтобы жить быстрее города", scores: { city: 3, hooligan: 1 } },
@@ -105,6 +116,7 @@ const QUESTIONS = [
   },
   {
     text: "Как ты выбираешь экипировку?",
+    image: "img/q4.jpg.jpg",
     answers: [
       { text: "Полный комплект, безопасность важнее всего", scores: { racer: 3, traveler: 1 } },
       { text: "Практично, удобно и недорого", scores: { city: 3 } },
@@ -114,6 +126,7 @@ const QUESTIONS = [
   },
   {
     text: "Идеальные выходные на мотоцикле?",
+    image: "img/q5.jpg.heic",
     answers: [
       { text: "Трек или пустая трасса — валить на все деньги", scores: { racer: 3 } },
       { text: "Дальняя поездка с палаткой и кофрами", scores: { traveler: 3, enduro: 1 } },
@@ -123,6 +136,7 @@ const QUESTIONS = [
   },
   {
     text: "Друг просит прокатиться на твоём мотоцикле. Что отвечаешь?",
+    image: "img/q6.jpg.jpg",
     answers: [
       { text: "«Сядешь только через мой труп»", scores: { esthete: 3, oldschool: 1 } },
       { text: "«Держи, только аккуратно»", scores: { oldschool: 2, traveler: 2 } },
@@ -132,6 +146,7 @@ const QUESTIONS = [
   },
   {
     text: "Погода портится, дождь стеной. Что делаешь?",
+    image: "img/q7.jpg.jpg",
     answers: [
       { text: "Еду, дождь — это не проблема", scores: { traveler: 3, city: 1 } },
       { text: "Пережидаю в кафе с чашкой кофе", scores: { esthete: 3 } },
@@ -141,6 +156,7 @@ const QUESTIONS = [
   },
   {
     text: "Что для тебя главное в мотоцикле?",
+    image: "img/q8.jpg.JPG",
     answers: [
       { text: "Мощность и динамика", scores: { racer: 3 } },
       { text: "Надёжность и комфорт", scores: { traveler: 3, city: 1 } },
@@ -150,6 +166,7 @@ const QUESTIONS = [
   },
   {
     text: "Твой девиз?",
+    image: "img/q9.jpg.jpg",
     answers: [
       { text: "Быстрее, выше, дальше", scores: { racer: 3 } },
       { text: "Сделай сам — сделай хорошо", scores: { philosopher: 3, oldschool: 1 } },
@@ -159,6 +176,7 @@ const QUESTIONS = [
   },
   {
     text: "Как ты относишься к новичкам на дороге?",
+    image: "img/q10.jpg.jpg",
     answers: [
       { text: "Осторожно, стараюсь держаться подальше", scores: { racer: 3, esthete: 1 } },
       { text: "Помогаю советом — сам таким был", scores: { oldschool: 3, traveler: 1 } },

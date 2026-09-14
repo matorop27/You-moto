@@ -1,8 +1,8 @@
 // Архетипы
 const ARCHETYPES = {
-  wolf: {
-    id: "wolf",
-    title: "Шоссейный волк",
+  racer: {
+    id: "racer",
+    title: "Шоссейный гонщик",
     tagline: "Скорость — это твоя религия",
     description:
       "Ты живёшь ради прямых участков, обгонов и рёва мотора на 12 000 оборотов. Тебе важен контроль и адреналин. Ты не любишь стоять в пробках — ты их объезжаешь.",
@@ -29,7 +29,7 @@ const ARCHETYPES = {
   },
   traveler: {
     id: "traveler",
-    title: "Дальнобойщик",
+    title: "Дальний турист",
     tagline: "Дорога длиннее, чем выходные",
     description:
       "Ты считаешь километры не за день, а за поездку. Кофры, палатка, рассвет где-то под Владимиром — твоя норма.",
@@ -38,7 +38,7 @@ const ARCHETYPES = {
   },
   enduro: {
     id: "enduro",
-    title: "Эндурист",
+    title: "Хард-эндурист",
     tagline: "Асфальт — это только до леса",
     description:
       "Ты едешь туда, где нет дорог, и находишь там себя. Грязь, броды, подъёмы — это не препятствия, а часть маршрута.",
@@ -54,9 +54,9 @@ const ARCHETYPES = {
     bike: "Чоппер или кастом: Harley-Davidson, Indian, бобберы на заказ.",
     strengths: ["Вкус", "Внимание к деталям", "Спокойствие"]
   },
-  courier: {
-    id: "courier",
-    title: "Городской курьер",
+  city: {
+    id: "city",
+    title: "Городской райдер",
     tagline: "Мотоцикл — это инструмент",
     description:
       "Ты ездишь каждый день, в любую погоду, по делам. Мотоцикл для тебя — не хобби, а способ жить быстрее города.",
@@ -77,93 +77,93 @@ const ARCHETYPES = {
 // Вопросы. Каждый ответ даёт очки архетипам.
 const QUESTIONS = [
   {
-    text: "Идеальное утро выходного дня?",
+    text: "За тобой пристроилась машина ДПС. Твои действия?",
     answers: [
-      { text: "Ранний выезд на трассу, пока пусто", scores: { wolf: 3, traveler: 1 } },
-      { text: "Кофе в гараже рядом с проектом", scores: { philosopher: 3, oldschool: 1 } },
-      { text: "Покатушки по городу с друзьями", scores: { hooligan: 3, courier: 1 } },
-      { text: "Загрузил кофры — и на 500 км", scores: { traveler: 3, enduro: 1 } }
+      { text: "Спокойно еду по правилам, мне скрывать нечего", scores: { oldschool: 3, traveler: 1 } },
+      { text: "Прибавляю газу — они всё равно не догонят", scores: { racer: 3, hooligan: 1 } },
+      { text: "Сворачиваю во дворы, я тут каждый угол знаю", scores: { hooligan: 3, city: 1 } },
+      { text: "Останавливаюсь, вежливо общаюсь, показываю документы", scores: { traveler: 3, city: 1 } }
     ]
   },
   {
-    text: "Твой мотоцикл мечты?",
+    text: "Упал в кювет на скорости. Первое, что делаешь?",
     answers: [
-      { text: "Спортбайк с характером", scores: { wolf: 3 } },
-      { text: "Кастом, собранный вручную", scores: { philosopher: 2, esthete: 2 } },
-      { text: "Лёгкий нейкед для города", scores: { hooligan: 3, courier: 1 } },
-      { text: "Адвенчер для дальних маршрутов", scores: { traveler: 3, enduro: 1 } }
+      { text: "Проверяю, цел ли я, потом уже мотоцикл", scores: { traveler: 3, racer: 1 } },
+      { text: "Матерюсь, встаю, поднимаю байк и еду дальше", scores: { enduro: 3, hooligan: 1 } },
+      { text: "Достаю телефон — это контент", scores: { hooligan: 3, city: 1 } },
+      { text: "Оцениваю, что сломалось, и думаю, как починить", scores: { philosopher: 3, oldschool: 1 } }
     ]
   },
   {
-    text: "Что для тебя мотоцикл?",
+    text: "Твой мотоцикл — это прежде всего…",
     answers: [
-      { text: "Скорость и адреналин", scores: { wolf: 3 } },
-      { text: "Процесс и творчество", scores: { philosopher: 2, esthete: 2 } },
-      { text: "Инструмент и свобода", scores: { courier: 2, hooligan: 2 } },
-      { text: "Путешествие и открытие", scores: { traveler: 3, enduro: 1 } }
+      { text: "Скорость и адреналин", scores: { racer: 3 } },
+      { text: "Инструмент, чтобы жить быстрее города", scores: { city: 3, hooligan: 1 } },
+      { text: "Объект красоты и стиля", scores: { esthete: 3 } },
+      { text: "Свобода и дорога без конца", scores: { traveler: 3, enduro: 1 } }
     ]
   },
   {
-    text: "Грязь на мотоцикле — это…",
+    text: "Как ты выбираешь экипировку?",
     answers: [
-      { text: "Признак того, что день удался", scores: { enduro: 3, traveler: 1 } },
-      { text: "Повод помыть и отполировать", scores: { esthete: 3, philosopher: 1 } },
-      { text: "Не бывает, я аккуратен", scores: { wolf: 2, oldschool: 1 } },
-      { text: "Норма, езжу каждый день", scores: { courier: 3, hooligan: 1 } }
+      { text: "Полный комплект, безопасность важнее всего", scores: { racer: 3, traveler: 1 } },
+      { text: "Практично, удобно и недорого", scores: { city: 3 } },
+      { text: "Главное — чтобы стильно смотрелось", scores: { esthete: 3, hooligan: 1 } },
+      { text: "Минимум — я и так справлюсь", scores: { enduro: 2, hooligan: 2 } }
     ]
   },
   {
-    text: "Твоя экипировка?",
+    text: "Идеальные выходные на мотоцикле?",
     answers: [
-      { text: "Полный комплект, всегда застёгнут", scores: { wolf: 3, traveler: 1 } },
-      { text: "Что-то модное и стильное", scores: { esthete: 3, hooligan: 1 } },
-      { text: "Практичное и удобное", scores: { courier: 3, traveler: 1 } },
-      { text: "Минимум, я и так справлюсь", scores: { hooligan: 2, enduro: 2 } }
+      { text: "Трек или пустая трасса — валить на все деньги", scores: { racer: 3 } },
+      { text: "Дальняя поездка с палаткой и кофрами", scores: { traveler: 3, enduro: 1 } },
+      { text: "Город, друзья, покатушки до ночи", scores: { hooligan: 3, city: 1 } },
+      { text: "Гараж, инструменты, доработка байка", scores: { philosopher: 3, oldschool: 1 } }
     ]
   },
   {
-    text: "Мотоцикл сломался в дороге. Что делаешь?",
+    text: "Друг просит прокатиться на твоём мотоцикле. Что отвечаешь?",
     answers: [
-      { text: "Достаю инструмент и чиню на месте", scores: { philosopher: 3, enduro: 1, oldschool: 1 } },
-      { text: "Звоню друзьям, разберёмся вместе", scores: { oldschool: 2, hooligan: 2 } },
-      { text: "Вызываю эвакуатор, мотоцикл важнее", scores: { esthete: 3, wolf: 1 } },
-      { text: "Быстро нахожу решение — работа ждёт", scores: { courier: 3 } }
+      { text: "«Сядешь только через мой труп»", scores: { esthete: 3, oldschool: 1 } },
+      { text: "«Держи, только аккуратно»", scores: { oldschool: 2, traveler: 2 } },
+      { text: "«Пошли, прокатимся вместе»", scores: { hooligan: 3, city: 1 } },
+      { text: "«Не, он не для новичков»", scores: { enduro: 3, racer: 1 } }
     ]
   },
   {
-    text: "Куда бы поехал на неделю?",
+    text: "Погода портится, дождь стеной. Что делаешь?",
     answers: [
-      { text: "Трек в Европе", scores: { wolf: 3 } },
-      { text: "Горы и бездорожье", scores: { enduro: 3, traveler: 1 } },
-      { text: "Крупный город — фестиваль, движ", scores: { hooligan: 2, courier: 1, oldschool: 1 } },
-      { text: "Вдоль побережья, не спеша", scores: { esthete: 2, traveler: 2 } }
+      { text: "Еду, дождь — это не проблема", scores: { traveler: 3, city: 1 } },
+      { text: "Пережидаю в кафе с чашкой кофе", scores: { esthete: 3 } },
+      { text: "Лечу домой максимально быстро", scores: { city: 3, racer: 1 } },
+      { text: "Дождь? Отлично — будет грязь и весело", scores: { enduro: 3, hooligan: 1 } }
     ]
   },
   {
-    text: "Твой стиль в одежде?",
+    text: "Что для тебя главное в мотоцикле?",
     answers: [
-      { text: "Техно, спорт, чёрное", scores: { wolf: 3 } },
-      { text: "Кожа, хром, джинсы", scores: { oldschool: 3, esthete: 1 } },
-      { text: "Стрит-кэжуал", scores: { hooligan: 3, courier: 1 } },
-      { text: "Удобное и практичное", scores: { traveler: 2, enduro: 2 } }
-    ]
-  },
-  {
-    text: "Что в твоём гараже кроме мотоцикла?",
-    answers: [
-      { text: "Инструмент на все случаи", scores: { philosopher: 3, enduro: 1 } },
-      { text: "Полироль, тряпки, красота", scores: { esthete: 3 } },
-      { text: "Второй мотоцикл", scores: { oldschool: 2, wolf: 1, hooligan: 1 } },
-      { text: "Ничего, у меня нет гаража", scores: { courier: 3 } }
+      { text: "Мощность и динамика", scores: { racer: 3 } },
+      { text: "Надёжность и комфорт", scores: { traveler: 3, city: 1 } },
+      { text: "Характер и звук", scores: { oldschool: 3, philosopher: 1 } },
+      { text: "Внешний вид и детали", scores: { esthete: 3 } }
     ]
   },
   {
     text: "Твой девиз?",
     answers: [
-      { text: "Быстрее, выше, дальше", scores: { wolf: 3 } },
+      { text: "Быстрее, выше, дальше", scores: { racer: 3 } },
       { text: "Сделай сам — сделай хорошо", scores: { philosopher: 3, oldschool: 1 } },
       { text: "Дорога сама найдётся", scores: { traveler: 3, enduro: 1 } },
       { text: "Главное — выглядеть на все сто", scores: { esthete: 3, hooligan: 1 } }
+    ]
+  },
+  {
+    text: "Как ты относишься к новичкам на дороге?",
+    answers: [
+      { text: "Осторожно, стараюсь держаться подальше", scores: { racer: 3, esthete: 1 } },
+      { text: "Помогаю советом — сам таким был", scores: { oldschool: 3, traveler: 1 } },
+      { text: "Смешно смотреть, как они мучаются", scores: { hooligan: 3, enduro: 1 } },
+      { text: "Каждый сам через это проходит", scores: { philosopher: 3, city: 1 } }
     ]
   }
 ];

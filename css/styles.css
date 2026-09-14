@@ -44,7 +44,7 @@ a { color: var(--accent); }
   color: var(--text);
   text-decoration: none;
   font-size: 18px;
-  padding: 10px 18px;
+  padding: 8px 16px;
   border-radius: 999px;
   border: 1px solid var(--accent);
   transition: background .15s, color .15s;
@@ -64,16 +64,16 @@ a { color: var(--accent); }
   background: transparent;
   border: 1px solid var(--accent);
   color: var(--text);
-  padding: 10px 22px;
+  padding: 8px 16px;
   border-radius: 999px;
   cursor: pointer;
   transition: background .15s, color .15s;
 }
 .profile-btn:hover { background: rgba(255, 90, 31, .1); }
 .profile-btn:active { transform: scale(.97); }
-.profile-btn__icon { font-size: 22px; line-height: 1; }
+.profile-btn__icon { font-size: 18px; line-height: 1; }
 .profile-btn__text {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: .5px;
@@ -240,9 +240,9 @@ h1 {
 /* mobile */
 @media (max-width: 480px) {
   .topbar__link { display: none; }
-  .profile-btn { padding: 8px 16px; }
-  .profile-btn__icon { font-size: 20px; }
-  .profile-btn__text { font-size: 11px; }
+  .profile-btn { padding: 6px 12px; }
+  .profile-btn__icon { font-size: 16px; }
+  .profile-btn__text { font-size: 9px; }
   .logo { padding: 8px 12px; font-size: 16px; }
   .topbar__left { gap: 10px; }
 }

@@ -126,15 +126,6 @@ function renderResult(a) {
     li.textContent = s;
     ul.appendChild(li);
   });
-
-  $("#agreePay").checked = false;
-  $("#agreeWeekly").checked = false;
-  $("#payBtn").disabled = true;
-}
-
-function checkPayReady() {
-  const ok = $("#agreePay").checked && $("#agreeWeekly").checked;
-  $("#payBtn").disabled = !ok;
 }
 
 function shareResult() {
@@ -151,25 +142,35 @@ function shareResult() {
   }
 }
 
+// оплата
+function checkPayReady() {
+  const ok = $("#agreeTerms")?.checked;
+  const btn = $("#payStartBtn");
+  if (btn) btn.disabled = !ok;
+}
+
+// EVENTS
 document.addEventListener("click", (e) => {
   const action = e.target.closest("[data-action]")?.dataset.action;
   if (!action) return;
 
-  if (action === "start") startQuiz();
+  if (action === "start") { e.preventDefault(); showScreen("pay"); }
+  if (action === "backToIntro") { e.preventDefault(); showScreen("intro"); }
   if (action === "back") goBack();
-  if (action === "restart") startQuiz();
+  if (action === "restart") { e.preventDefault(); showScreen("pay"); }
   if (action === "share") shareResult();
   if (action === "openTerms") { e.preventDefault(); showScreen("terms"); }
-  if (action === "closeTerms") { e.preventDefault(); showScreen(state.prevScreen || "result"); }
+  if (action === "closeTerms") { e.preventDefault(); showScreen(state.prevScreen || "intro"); }
   if (action === "openProfile") { e.preventDefault(); showScreen("profile"); }
   if (action === "closeProfile") { e.preventDefault(); showScreen(state.prevScreen || "intro"); }
 });
 
-$("#agreePay")?.addEventListener("change", checkPayReady);
-$("#agreeWeekly")?.addEventListener("change", checkPayReady);
+$("#agreeTerms")?.addEventListener("change", checkPayReady);
 
-$("#payBtn")?.addEventListener("click", () => {
-  alert("Платежи подключаются на следующем этапе.");
+$("#payStartBtn")?.addEventListener("click", () => {
+  // тут потом будет реальная оплата.
+  // сейчас — просто запускаем тест.
+  startQuiz();
 });
 
 $("#cancelSubBtn")?.addEventListener("click", () => {

@@ -1,5 +1,6 @@
 const state = {
   screen: "intro",
+  prevScreen: "intro",
   qIndex: 0,
   scores: {},
   answers: []
@@ -9,6 +10,7 @@ const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
 function showScreen(name) {
+  state.prevScreen = state.screen;
   state.screen = name;
   $$(".screen").forEach((el) => {
     el.classList.toggle("screen--active", el.dataset.screen === name);
@@ -138,7 +140,9 @@ document.addEventListener("click", (e) => {
   if (action === "restart") startQuiz();
   if (action === "share") shareResult();
   if (action === "openTerms") { e.preventDefault(); showScreen("terms"); }
-  if (action === "closeTerms") { e.preventDefault(); showScreen("result"); }
+  if (action === "closeTerms") { e.preventDefault(); showScreen(state.prevScreen || "result"); }
+  if (action === "openProfile") { e.preventDefault(); showScreen("profile"); }
+  if (action === "closeProfile") { e.preventDefault(); showScreen(state.prevScreen || "intro"); }
 });
 
 $("#agreePay")?.addEventListener("change", checkPayReady);
@@ -146,6 +150,10 @@ $("#agreeWeekly")?.addEventListener("change", checkPayReady);
 
 $("#payBtn")?.addEventListener("click", () => {
   alert("Платежи подключаются на следующем этапе.");
+});
+
+$("#cancelSubBtn")?.addEventListener("click", () => {
+  alert("У вас нет активной подписки.");
 });
 
 $("#year").textContent = new Date().getFullYear();

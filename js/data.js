@@ -4,7 +4,7 @@ const ARCHETYPES = {
     id: "racer",
     title: "Шоссейный гонщик",
     tagline: "Скорость — это твоя религия",
-    image: "a-racer.jpg",
+    image: "a-racer.jpg.PNG",
     description:
       "Ты живёшь ради прямых участков, обгонов и рёва мотора на 12 000 оборотов. Тебе важен контроль и адреналин. Ты не любишь стоять в пробках — ты их объезжаешь.",
     bike: "Спортбайк или спорт-турист: Yamaha R7, Kawasaki Ninja 650, Ducati Supersport.",
@@ -14,7 +14,7 @@ const ARCHETYPES = {
     id: "philosopher",
     title: "Гаражный философ",
     tagline: "Мотоцикл — это процесс, а не результат",
-    image: "a-philosopher.jpg",
+    image: "a-philosopher.jpg.PNG",
     description:
       "Ты любишь разбирать, чинить, улучшать. Поездка для тебя — повод проверить то, что ты собрал своими руками. В гараже ты медитируешь.",
     bike: "Классика или кастом под сборку: Royal Enfield, Yamaha XS, любой проект под восстановление.",
@@ -24,7 +24,7 @@ const ARCHETYPES = {
     id: "hooligan",
     title: "Стрит-хулиган",
     tagline: "Город — твоя площадка",
-    image: "a-hooligan.jpg",
+    image: "a-hooligan.jpg.PNG",
     description:
       "Ты ездишь там, где нельзя, паркуешься там, где не паркуются, и знаешь все дворы в радиусе 10 км. Тебе важен стиль и звук.",
     bike: "Нейкед или супермото: Yamaha MT-07, KTM 690 Duke, Husqvarna 701.",
@@ -34,7 +34,7 @@ const ARCHETYPES = {
     id: "traveler",
     title: "Дальний турист",
     tagline: "Дорога длиннее, чем выходные",
-    image: "a-traveler.jpg",
+    image: "a-traveler.jpg.PNG",
     description:
       "Ты считаешь километры не за день, а за поездку. Кофры, палатка, рассвет где-то под Владимиром — твоя норма.",
     bike: "Турист или адвенчер: BMW GS, Honda Africa Twin, Yamaha Ténéré.",
@@ -44,7 +44,7 @@ const ARCHETYPES = {
     id: "enduro",
     title: "Хард-эндурист",
     tagline: "Асфальт — это только до леса",
-    image: "a-enduro.jpg",
+    image: "a-enduro.jpg.PNG",
     description:
       "Ты едешь туда, где нет дорог, и находишь там себя. Грязь, броды, подъёмы — это не препятствия, а часть маршрута.",
     bike: "Эндуро или хард-эндуро: KTM EXC, Husqvarna TE, Honda CRF.",
@@ -54,7 +54,7 @@ const ARCHETYPES = {
     id: "esthete",
     title: "Кастом-эстет",
     tagline: "Красота важнее скорости",
-    image: "a-esthete.jpg",
+    image: "a-esthete.jpg.PNG",
     description:
       "Для тебя мотоцикл — это объект искусства. Хром, кожа, правильные пропорции. Ты ездишь медленно и выглядишь дорого.",
     bike: "Чоппер или кастом: Harley-Davidson, Indian, бобберы на заказ.",
@@ -64,7 +64,7 @@ const ARCHETYPES = {
     id: "city",
     title: "Городской райдер",
     tagline: "Мотоцикл — это инструмент",
-    image: "a-city.jpg",
+    image: "a-city.jpg.PNG",
     description:
       "Ты ездишь каждый день, в любую погоду, по делам. Мотоцикл для тебя — не хобби, а способ жить быстрее города.",
     bike: "Нейкед или макси-скутер: Honda CB500, Yamaha XMAX, BMW C400.",
@@ -74,7 +74,7 @@ const ARCHETYPES = {
     id: "oldschool",
     title: "Олдскул-байкер",
     tagline: "Настоящее — это то, что сделано до 2000-го",
-    image: "a-oldschool.jpg",
+    image: "a-oldschool.jpg.PNG",
     description:
       "Ты уважаешь традиции, кожаные куртки, клубы и долгие разговоры у костра. Новомодное тебе неинтересно.",
     bike: "Классика: Harley Sportster, Triumph Bonneville, Ural.",

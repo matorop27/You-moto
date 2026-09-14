@@ -105,7 +105,8 @@ h1 {
   margin: 0 0 20px;
 }
 .accent { color: var(--accent); }
-.lead { font-size: 18px; color: var(--muted); max-width: 560px; margin: 0 auto 28px; }
+.lead { font-size: 18px; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+.intro .lead { margin: 0 auto 28px; }
 .hint { color: var(--muted); font-size: 13px; margin-top: 12px; }
 
 /* buttons */
@@ -119,12 +120,38 @@ h1 {
   cursor: pointer;
   text-decoration: none;
   transition: transform .08s ease, opacity .15s ease;
+  margin-top: 12px;
 }
 .btn:active { transform: scale(.98); }
 .btn--primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #14110d; }
 .btn--ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
 .btn--lg { padding: 18px 32px; font-size: 18px; }
 .btn:disabled { opacity: .45; cursor: not-allowed; }
+
+/* pay screen */
+.pay h1 { margin-bottom: 8px; }
+.pay__card {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 20px 0;
+}
+.pay__price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.pay__amount {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+.pay__note { color: var(--muted); font-size: 14px; }
 
 /* quiz */
 .progress {
@@ -206,25 +233,6 @@ h1 {
 .list li { margin-bottom: 6px; }
 .list--muted li { color: var(--muted); }
 
-/* paywall */
-.paywall {
-  background: linear-gradient(180deg, #1a1f28, #14181f);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px;
-  margin: 32px 0;
-}
-.paywall__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.paywall__head h3 { margin: 0; font-size: 20px; }
-.badge {
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(255,90,31,.15);
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 .check {
   display: flex;
   gap: 10px;
@@ -237,7 +245,7 @@ h1 {
 .check input { margin-top: 3px; accent-color: var(--accent); flex-shrink: 0; }
 .check strong { color: var(--text); }
 
-.result__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.result__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
 
 /* profile */
 .profile h1 { margin-bottom: 8px; }

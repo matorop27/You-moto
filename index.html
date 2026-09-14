@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Какой ты мотоциклист? — тест</title>
   <meta name="description" content="10 вопросов — и ты узнаешь свой мотоциклетный архетип." />
 
@@ -16,7 +16,13 @@
 
 <header class="topbar">
   <div class="container topbar__inner">
-    <a class="logo" href="./">MOTO<span>TYPE</span></a>
+    <div class="topbar__left">
+      <button class="profile-btn" data-action="openProfile">
+        <span class="profile-btn__icon">👤</span>
+        <span class="profile-btn__text">Профиль</span>
+      </button>
+      <a class="logo" href="./">MOTO<span>TYPE</span></a>
+    </div>
     <a class="topbar__link" href="#about">О тесте</a>
   </div>
 </header>
@@ -109,7 +115,39 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 4: ОФЕРТА -->
+  <!-- ЭКРАН 4: ПРОФИЛЬ -->
+  <section class="screen" data-screen="profile">
+    <div class="container profile">
+      <h1>Личный профиль</h1>
+      <p class="profile__sub">Здесь появится информация о тебе, история тестов и управление подпиской.</p>
+
+      <div class="profile__card">
+        <div class="profile__row">
+          <span class="profile__label">Имя</span>
+          <span class="profile__value">Гость</span>
+        </div>
+        <div class="profile__row">
+          <span class="profile__label">Email</span>
+          <span class="profile__value profile__value--muted">не привязан</span>
+        </div>
+        <div class="profile__row">
+          <span class="profile__label">Пройдено тестов</span>
+          <span class="profile__value">0</span>
+        </div>
+        <div class="profile__row">
+          <span class="profile__label">Подписка</span>
+          <span class="profile__value profile__value--muted">не активна</span>
+        </div>
+      </div>
+
+      <button class="btn btn--ghost" id="cancelSubBtn">Отключить подписку</button>
+      <p class="hint">Пока подписки нет — кнопка показывает заглушку. Реальное отключение появится после подключения платежей.</p>
+
+      <button class="btn btn--primary" data-action="closeProfile">← Назад</button>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 5: ОФЕРТА -->
   <section class="screen" data-screen="terms">
     <div class="container terms">
       <h1>Условия оплаты</h1>

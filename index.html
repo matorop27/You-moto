@@ -39,11 +39,43 @@
         Ответь на 10 вопросов — узнай свой тип мотоциклиста и байк, который тебе подходит.
       </p>
       <button class="btn btn--primary btn--lg" data-action="start">Узнать, какой я мотоциклист</button>
-      <p class="hint">Бесплатно · Без регистрации · Результат сразу</p>
     </div>
   </section>
 
-  <!-- ЭКРАН 2: ВОПРОСЫ -->
+  <!-- ЭКРАН 2: ОПЛАТА -->
+  <section class="screen" data-screen="pay">
+    <div class="container pay">
+      <p class="eyebrow">Оплата</p>
+      <h1>Доступ к тесту</h1>
+      <p class="lead">Один разовый платёж — полный доступ к тесту и результату.</p>
+
+      <div class="pay__card">
+        <div class="pay__price">
+          <span class="pay__amount">10 ₽</span>
+          <span class="pay__note">единоразово</span>
+        </div>
+        <ul class="list list--muted">
+          <li>10 вопросов о тебе и твоём стиле езды</li>
+          <li>Определение твоего архетипа</li>
+          <li>Подбор мотоцикла под твой тип</li>
+        </ul>
+      </div>
+
+      <label class="check">
+        <input type="checkbox" id="agreeTerms" />
+        <span>Я принимаю условия <a href="#" data-action="openTerms">оферты</a> и согласен с оплатой 10 ₽.</span>
+      </label>
+
+      <button class="btn btn--primary btn--lg" id="payStartBtn" disabled>
+        Оплатить 10 ₽ и начать
+      </button>
+
+      <button class="btn btn--ghost" data-action="backToIntro">← Назад</button>
+      <p class="hint">Платежи подключаются на следующем этапе — сейчас кнопка запускает тест напрямую.</p>
+    </div>
+  </section>
+
+  <!-- ЭКРАН 3: ВОПРОСЫ -->
   <section class="screen" data-screen="quiz">
     <div class="container quiz">
       <div class="progress">
@@ -62,7 +94,7 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 3: РЕЗУЛЬТАТ -->
+  <!-- ЭКРАН 4: РЕЗУЛЬТАТ -->
   <section class="screen" data-screen="result">
     <div class="container result">
       <p class="eyebrow">Твой архетип</p>
@@ -83,39 +115,6 @@
       <h3 class="section-title">Сильные стороны</h3>
       <ul id="resultStrengths" class="list"></ul>
 
-      <!-- БЛОК ОПЛАТЫ (пока заглушка) -->
-      <div class="paywall">
-        <div class="paywall__head">
-          <h3>Полный разбор</h3>
-          <span class="badge">Скоро</span>
-        </div>
-        <ul class="list list--muted">
-          <li>Подробный психологический портрет</li>
-          <li>3 мотоцикла под твой стиль с бюджетом</li>
-          <li>Чек-лист экипировки</li>
-          <li>Персональный PDF</li>
-        </ul>
-
-        <label class="check">
-          <input type="checkbox" id="agreePay" />
-          <span>Я оплачиваю 10 ₽ и принимаю условия <a href="#" data-action="openTerms">оферты</a>.</span>
-        </label>
-
-        <label class="check">
-          <input type="checkbox" id="agreeWeekly" />
-          <span>
-            Я понимаю, что подписка продлевается автоматически —
-            <strong>500 ₽ раз в 7 дней</strong> — и её можно отключить
-            в личном кабинете в любой момент.
-          </span>
-        </label>
-
-        <button class="btn btn--primary btn--lg" id="payBtn" disabled>
-          Оплатить 10 ₽
-        </button>
-        <p class="hint">Платежи подключаются на следующем этапе.</p>
-      </div>
-
       <div class="result__actions">
         <button class="btn btn--primary" data-action="share">Поделиться результатом</button>
         <button class="btn btn--ghost" data-action="restart">Пройти заново</button>
@@ -123,7 +122,7 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 4: ПРОФИЛЬ -->
+  <!-- ЭКРАН 5: ПРОФИЛЬ -->
   <section class="screen" data-screen="profile">
     <div class="container profile">
       <h1>Личный профиль</h1>
@@ -155,13 +154,11 @@
     </div>
   </section>
 
-  <!-- ЭКРАН 5: ОФЕРТА -->
+  <!-- ЭКРАН 6: ОФЕРТА -->
   <section class="screen" data-screen="terms">
     <div class="container terms">
       <h1>Условия оплаты</h1>
       <p><strong>Стоимость теста:</strong> 10 ₽ единоразово.</p>
-      <p><strong>Подписка:</strong> 500 ₽ каждые 7 дней, продлевается автоматически.</p>
-      <p><strong>Отключение:</strong> в личном кабинете в любой момент или письмом на support@…</p>
       <p><strong>Возврат:</strong> до получения полного результата — по запросу.</p>
       <p class="hint">Текст-заглушка. Заменим на нормальную оферту до подключения платежей.</p>
       <button class="btn btn--ghost" data-action="closeTerms">← Назад</button>

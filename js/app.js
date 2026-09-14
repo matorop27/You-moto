@@ -39,6 +39,16 @@ function renderQuestion() {
     (state.qIndex / QUESTIONS.length) * 100 + "%";
   $("#questionText").textContent = q.text;
 
+  const qImgWrap = document.querySelector(".question-image");
+  const qImg = $("#questionImage");
+  if (q.image) {
+    qImg.src = q.image;
+    qImg.alt = q.text;
+    qImgWrap.style.display = "block";
+  } else {
+    qImgWrap.style.display = "none";
+  }
+
   const box = $("#answers");
   box.innerHTML = "";
   q.answers.forEach((a, i) => {
@@ -98,6 +108,16 @@ function renderResult(a) {
   $("#resultTagline").textContent = a.tagline;
   $("#resultDescription").textContent = a.description;
   $("#resultBike").textContent = a.bike;
+
+  const rImgWrap = document.querySelector(".result__image");
+  const rImg = $("#resultImage");
+  if (a.image) {
+    rImg.src = a.image;
+    rImg.alt = a.title;
+    rImgWrap.style.display = "block";
+  } else {
+    rImgWrap.style.display = "none";
+  }
 
   const ul = $("#resultStrengths");
   ul.innerHTML = "";

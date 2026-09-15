@@ -85,13 +85,12 @@ a { color: var(--accent); }
 .screen { display: none; padding: 48px 0 64px; }
 .screen--active { display: block; }
 
-/* компактный экран теста */
 .screen[data-screen="quiz"] {
   padding: 16px 0 24px;
 }
 
 /* intro */
-.intro { text-align: center; padding: 40px 0; }
+.intro { text-align: center; padding: 20px 0 40px; }
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -108,6 +107,22 @@ h1 {
 .lead { font-size: 18px; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
 .intro .lead { margin: 0 auto 28px; }
 .hint { color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+/* hero image */
+.hero-image {
+  margin: 0 auto 28px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-soft);
+  aspect-ratio: 16 / 9;
+  max-height: 40vh;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* buttons */
 .btn {
@@ -291,6 +306,8 @@ h1 {
   .profile-btn__text { font-size: 9px; }
   .logo { padding: 8px 12px; font-size: 16px; }
   .topbar__left { gap: 10px; }
+
+  .hero-image { max-height: 32vh; margin-bottom: 20px; }
 
   .screen[data-screen="quiz"] { padding: 12px 0 16px; }
   .question-image { max-height: 30vh; margin-bottom: 10px; }
